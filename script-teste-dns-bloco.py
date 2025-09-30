@@ -4,9 +4,9 @@ RESOLVER = "8.8.8.8"   # troque para seu DNS interno se preferir
 TIMEOUT  = "2"
 TRIES    = "1"
 
-for i in range(128, 132):       # 190.111.128.0 ... 190.111.131.255
+for i in range(108, 111):       # 190.111.128.0 ... 190.111.131.255
     for j in range(256):
-        ip = f"190.111.{i}.{j}"
+        ip = f"177.84.{i}.{j}"
         cmd = ["dig", "-x", ip, f"@{RESOLVER}", "+noall", "+answer", "+comments", f"+timeout={TIMEOUT}", f"+tries={TRIES}"]
         try:
             r = subprocess.run(cmd, text=True, capture_output=True)
